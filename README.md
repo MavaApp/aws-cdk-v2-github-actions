@@ -20,7 +20,7 @@ jobs:
     steps:
 
       - name: cdk diff
-        uses: youyo/aws-cdk-github-actions@v2
+        uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
         with:
           cdk_subcommand: 'diff'
           actions_comment: true
@@ -30,7 +30,7 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
       - name: cdk deploy
-        uses: youyo/aws-cdk-github-actions@v2
+        uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
         with:
           cdk_subcommand: 'deploy'
           cdk_stack: 'stack1'
@@ -42,7 +42,7 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
       - name: cdk synth
-        uses: youyo/aws-cdk-github-actions@v2
+        uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
         with:
           cdk_subcommand: 'synth'
           cdk_version: '1.16.2'
@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assume Role
-        uses: youyo/awscredswrap@master
+        uses: arnaskro/awscredswrap@master
         with:
           role_arn: ${{ secrets.ROLE_ARN }}
           duration_seconds: 3600
@@ -77,7 +77,7 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
       - name: cdk diff
-        uses: youyo/aws-cdk-github-actions@v2
+        uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
         with:
           cdk_subcommand: 'diff'
 ```
@@ -109,4 +109,4 @@ Recommended to get `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` from secrets.
 
 ## Author
 
-[youyo](https://github.com/youyo)
+[arnaskro](https://github.com/arnaskro)

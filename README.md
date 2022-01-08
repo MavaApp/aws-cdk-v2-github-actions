@@ -33,8 +33,7 @@ jobs:
         uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
         with:
           cdk_subcommand: 'deploy'
-          cdk_stack: 'stack1'
-          cdk_args: '--require-approval never'
+          cdk_args: '--all --require-approval never'
           actions_comment: false
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -45,13 +44,22 @@ jobs:
         uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
         with:
           cdk_subcommand: 'synth'
-          cdk_version: '1.16.2'
+          cdk_version: '2.4.0'
           working_dir: 'src'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 ```
+
+### Can I deploy multiple stacks?
+
+Include the stack names in the `cdk_stack` parameter and also make sure not to include the `--all` flag in `cdk_args` parameters.
+
+```yaml
+          cdk_stack: 'Stack1 Stack2'
+```
+
 
 ### Can I take a assume-role?
 

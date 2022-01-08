@@ -7,7 +7,7 @@ branding:
 inputs:
   cdk_stack:
     description: 'AWS CDK stack name to execute.'
-    default: '*'
+    default: '--all'
   cdk_version:
     description: 'AWS CDK version to install.'
     default: 'latest'

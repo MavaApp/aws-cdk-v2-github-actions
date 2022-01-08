@@ -20,7 +20,7 @@ jobs:
     steps:
 
       - name: cdk diff
-        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.0
+        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.1
         with:
           cdk_subcommand: 'diff'
           actions_comment: true
@@ -30,10 +30,10 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
       - name: cdk deploy
-        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.0
+        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.1
         with:
           cdk_subcommand: 'deploy'
-          cdk_args: '--all --require-approval never'
+          cdk_args: '--require-approval never'
           actions_comment: false
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -41,7 +41,7 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
       - name: cdk synth
-        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.0
+        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.1
         with:
           cdk_subcommand: 'synth'
           cdk_version: '2.4.0'
@@ -57,13 +57,13 @@ jobs:
 Include the stack names in the `cdk_stack` parameter and also make sure not to include the `--all` flag in `cdk_args` parameters.
 
 ```yaml
-          cdk_stack: 'Stack1 Stack2'
+cdk_stack: 'Stack1 Stack2'
 ```
 
 
 ### Can I take a assume-role?
 
-If you use assume-role, we recommended using awscredswrap!  
+If you use assume-role, we recommended using awscredswrap!
 See: https://github.com/marketplace/actions/aws-assume-role-github-actions#use-as-github-actions
 
 ```yaml
@@ -85,7 +85,7 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
       - name: cdk diff
-        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.0
+        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.1
         with:
           cdk_subcommand: 'diff'
 ```
@@ -109,7 +109,7 @@ jobs:
 - `AWS_SECRET_ACCESS_KEY` **Required**
 - `GITHUB_TOKEN` Required for `actions_comment=true`
 
-Recommended to get `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` from secrets. A github token is [automatically made available](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token) as a secret as `GITHUB_TOKEN`. 
+Recommended to get `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` from secrets. A github token is [automatically made available](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token) as a secret as `GITHUB_TOKEN`.
 
 ## License
 

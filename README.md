@@ -20,7 +20,7 @@ jobs:
     steps:
 
       - name: cdk diff
-        uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
+        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.0
         with:
           cdk_subcommand: 'diff'
           actions_comment: true
@@ -30,7 +30,7 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
       - name: cdk deploy
-        uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
+        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.0
         with:
           cdk_subcommand: 'deploy'
           cdk_args: '--all --require-approval never'
@@ -41,7 +41,7 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
       - name: cdk synth
-        uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
+        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.0
         with:
           cdk_subcommand: 'synth'
           cdk_version: '2.4.0'
@@ -85,7 +85,7 @@ jobs:
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
       - name: cdk diff
-        uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
+        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.0
         with:
           cdk_subcommand: 'diff'
 ```

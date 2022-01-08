@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: cdk diff
         id: diff
-        uses: arnaskro/aws-cdk-v2-github-actions@v1.0.0
+        uses: arnaskro/aws-cdk-v2-github-actions@v2.2.0
         with:
           cdk_subcommand: 'diff'
           actions_comment: true

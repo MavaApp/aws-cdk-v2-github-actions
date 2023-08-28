@@ -17,4 +17,6 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 
 COPY entrypoint.sh /entrypoint.sh
 
+ENV INPUT_CDK_VERSION="2.92.0"
+
 ENTRYPOINT ["/entrypoint.sh"]

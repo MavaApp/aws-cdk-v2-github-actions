@@ -15,17 +15,17 @@ function installTypescript(){
 }
 
 function installAwsCdk(){
-	echo "Install aws-cdk 2.92.0"
+	echo "Install aws-cdk 2.94.0"
 	if [ "${INPUT_DEBUG_LOG}" == "true" ]; then
-		npm install -g aws-cdk@2.92.0
+		npm install -g aws-cdk@2.94.0
 	else
-		npm install -g aws-cdk@2.92.0 >/dev/null 2>&1
+		npm install -g aws-cdk@2.94.0 >/dev/null 2>&1
 	fi
 
 	if [ "${?}" -ne 0 ]; then
-		echo "Failed to install aws-cdk 2.92.0"
+		echo "Failed to install aws-cdk 2.94.0"
 	else
-		echo "Successful install aws-cdk 2.92.0"
+		echo "Successful install aws-cdk 2.94.0"
 	fi
 }
 
